@@ -29,18 +29,18 @@ namespace WebApplication3.Controllers
 
         public ActionResult Road()
         {
-            var models = from mod in db.vProductAndDescription2 where mod.ProductCategoryID == 6 && mod.Culture == "en" select (mod);
-            return View(models);
+            var category = 6;
+            return Models(category);
         }
         public ActionResult Touring()
         {
-            var models = from mod in db.vProductAndDescription2 where mod.ProductCategoryID == 7 && mod.Culture == "en" select (mod);
-            return View(models);
+            var category = 7;
+            return Models(category);
         }
         public ActionResult Mountain()
         {
-            var models = from mod in db.vProductAndDescription2 where mod.ProductCategoryID == 5 && mod.Culture == "en" select (mod);
-            return View(models);
+            var category = 5;
+            return Models(category);
         }
 
         // GET: ProductCategories/Details/5
