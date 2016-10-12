@@ -4,20 +4,32 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-    @{ /*
-      @Styles.Render("~/Content/css")
-      @Scripts.Render("~/bundles/modernizr") */
-    }
+    
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    
 </head>
 <body>
-    
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Adventure Bikes!</p>
-        </footer>
+    <div class="body">
+        <div class="container header">
+            <div class="header-back"></div>
+            <img src="~/img/logo.png" />
+        </div>
+        <div class="toolbar">
+            <a href="../../Home/Index">Home</a>
+            <a href="../../Bikes/Index">Bikes</a>
+            <a href="../../Gear/Index">Gear</a>
+        </div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Adventure Bikes!</p>
+            </footer>
+        </div>
     </div>
+    <div class="back-right"></div>
+    <div class="back-left"></div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
