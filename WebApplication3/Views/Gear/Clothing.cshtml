@@ -1,0 +1,12 @@
+﻿@model IEnumerable<WebApplication3.ProductCategory>
+
+@{
+    ViewBag.Title = "Models";
+
+}
+<h2>Clothing</h2>
+
+@foreach (var item in Model)
+{
+    <h2>@Html.ActionLink(item.Name, "Details", new { id = item.ProductCategoryID })</h2>
+}

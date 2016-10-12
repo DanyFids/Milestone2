@@ -1,0 +1,20 @@
+﻿@model IEnumerable<WebApplication3.ProductCategory>
+
+@{
+    ViewBag.Title = "Index";
+
+    IDictionary<int, String> CATEGORIES = new Dictionary<int, String>();
+    CATEGORIES[2] = "Components";
+    CATEGORIES[3] = "Clothing";
+    CATEGORIES[4] = "Accessories";
+}
+
+<h1>Adventure Bikes</h1>
+
+<h2>Browse our bike Categories</h2>
+
+@foreach (var item in Model) {
+    @Html.ActionLink(@item.Name, CATEGORIES[item.ProductCategoryID]);   
+    <br /> 
+}
+

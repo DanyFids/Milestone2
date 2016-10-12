@@ -38,10 +38,10 @@
             @Html.DisplayFor(modelItem => item.ProductNumber)
         </td>
         <td>
-            @{
+            @{ 
                 var clrStr = "N/A";
 
-                if (item.Color != null)
+                if(item.Color != null)
                 {
                     clrStr = item.Color;
                 }
