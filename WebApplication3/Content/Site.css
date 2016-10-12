@@ -91,6 +91,21 @@ textarea {
     border-width: 1px;
 }
 
-.toolbar a{
-    background: #b5b5b5;
+.toolbar a {
+    color: #000000;
+    border-left: solid;
+    border-right: solid;
+    border-width: 1px;
+    padding: 5px;
+    text-decoration: underline;
+    background: #d5d5d5
 }
+
+.toolbar a:link, .toolbar a:visited,
+    .toolbar a:active, .toolbar a:hover {
+        color: #333;
+    }
+
+.toolbar a:hover {
+        background-color: #c7d1d6;
+    }
