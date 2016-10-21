@@ -7,18 +7,29 @@
     
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
     
 </head>
 <body>
+    <div class="back-right"></div>
+    <div class="back-left"></div>
     <div class="body">
         <div class="container header">
             <div class="header-back"></div>
             <img src="~/img/logo.png" />
         </div>
         <div class="toolbar">
-            <a href="../../Home/Index">Home</a>
-            <a href="../../Bikes/Index">Bikes</a>
-            <a href="../../Gear/Index">Gear</a>
+        <table>
+            <tr>
+                <td>
+                    <a href="../../Home/">Home</a>
+                </td><td>
+                    <a href="../../Bikes/">Bikes</a>
+                </td><td>
+                    <a href="../../Gear/">Gear</a>
+                </td>
+            </tr>
+        </table>
         </div>
         <div class="container body-content">
             @RenderBody()
@@ -28,10 +39,7 @@
             </footer>
         </div>
     </div>
-    <div class="back-right"></div>
-    <div class="back-left"></div>
-
-    @Scripts.Render("~/bundles/jquery")
+    
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>

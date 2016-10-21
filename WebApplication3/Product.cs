@@ -11,19 +11,35 @@ namespace WebApplication3
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Product
     {
+        [Required(ErrorMessage = "* Required")]
         public int ProductID { get; set; }
+        [Required(ErrorMessage ="* Required")]
         public string Name { get; set; }
+        [Required(ErrorMessage = "* Required")]
         public string ProductNumber { get; set; }
+        [Required(ErrorMessage = "* Required")]
         public string Color { get; set; }
+        [Required(ErrorMessage = "* Required")]
+        [Range(typeof(decimal), minimum: "0.0", maximum: "79228162514264337593543950335", ErrorMessage = "* Value must be positive")]
         public decimal StandardCost { get; set; }
+        [Required(ErrorMessage = "* Required")]
+        [Range(typeof(decimal), minimum: "0.0", maximum: "79228162514264337593543950335", ErrorMessage = "* Value must be positive")]
         public decimal ListPrice { get; set; }
+        [Required(ErrorMessage = "* Required")]
         public string Size { get; set; }
+        [Required(ErrorMessage = "* Required")]
+        [Range(typeof(decimal), minimum:"0.0", maximum: "79228162514264337593543950335", ErrorMessage ="* Value must be positive")]
         public Nullable<decimal> Weight { get; set; }
+        [Required]
+        [Range(minimum: 5, maximum: 7, ErrorMessage = "* Required")]
         public Nullable<int> ProductCategoryID { get; set; }
+        [Required]
         public Nullable<int> ProductModelID { get; set; }
+        [Required(ErrorMessage = "* Required")]
         public System.DateTime SellStartDate { get; set; }
         public Nullable<System.DateTime> SellEndDate { get; set; }
         public Nullable<System.DateTime> DiscontinuedDate { get; set; }

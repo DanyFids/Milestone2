@@ -158,6 +158,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BikesManagerController.cs" />
     <Compile Include="Controllers\GearController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\BikesController.cs" />
@@ -265,6 +266,11 @@
     <Content Include="Views\Gear\Components.cshtml" />
     <Content Include="Views\Gear\Clothing.cshtml" />
     <Content Include="Views\Gear\Accessories.cshtml" />
+    <Content Include="Views\BikesManager\Create.cshtml" />
+    <Content Include="Views\BikesManager\Delete.cshtml" />
+    <Content Include="Views\BikesManager\Details.cshtml" />
+    <Content Include="Views\BikesManager\Edit.cshtml" />
+    <Content Include="Views\BikesManager\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

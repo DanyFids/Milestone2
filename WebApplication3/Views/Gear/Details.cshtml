@@ -5,78 +5,80 @@
 }
 
 <h2>Product Details</h2>
+<div class="content">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Color)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Size)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weight)
+            </th>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ProductNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Color)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ListPrice)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Size)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Weight)
-        </th>
-        
-    </tr>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProductNumber)
-        </td>
-        <td>
-            @{ 
-                var clrStr = "N/A";
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductNumber)
+                </td>
+                <td>
+                    @{
+                        var clrStr = "N/A";
 
-                if(item.Color != null)
-                {
-                    clrStr = item.Color;
-                }
-            }
-            @Html.DisplayFor(modelItem => clrStr)
-        </td>
-        <td>
-            @{
-                var fPrice = item.ListPrice.ToString("c");
-            }
-            @Html.DisplayFor(modelItem => fPrice)
-        </td>
-        <td>
-            @{
-                var szStr = "N/A";
+                        if (item.Color != null)
+                        {
+                            clrStr = item.Color;
+                        }
+                    }
+                    @Html.DisplayFor(modelItem => clrStr)
+                </td>
+                <td>
+                    @{
+                        var fPrice = item.ListPrice.ToString("c");
+                    }
+                    @Html.DisplayFor(modelItem => fPrice)
+                </td>
+                <td>
+                    @{
+                        var szStr = "N/A";
 
-                if (item.Size != null)
-                {
-                    szStr = item.Size;
-                }
-            }
-            @Html.DisplayFor(modelItem => szStr)
-        </td>
-        <td>
-            @{
-                var wghtStr = "N/A";
+                        if (item.Size != null)
+                        {
+                            szStr = item.Size;
+                        }
+                    }
+                    @Html.DisplayFor(modelItem => szStr)
+                </td>
+                <td>
+                    @{
+                        var wghtStr = "N/A";
 
-                if (item.Weight != null)
-                {
-                    wghtStr = item.Weight.ToString();
-                }
-            }
-            @Html.DisplayFor(modelItem => wghtStr)
-        </td>
-    </tr>
-}
+                        if (item.Weight != null)
+                        {
+                            wghtStr = item.Weight.ToString();
+                        }
+                    }
+                    @Html.DisplayFor(modelItem => wghtStr)
+                </td>
+            </tr>
+                        }
+</div>
 
 </table>

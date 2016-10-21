@@ -1,4 +1,9 @@
-﻿body {
+﻿html{
+    min-height: 100%;
+    position:relative;
+}
+
+body {
     padding-bottom: 20px;
     height: 100%;
 }
@@ -39,18 +44,18 @@ body{
     
 }
 .container{
-    
 }
 
 footer{
     bottom: 0;
-    position: absolute;
+    position: fixed;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    height: 75%;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -89,13 +94,23 @@ textarea {
     background: #d5d5d5;
     border-bottom: solid;
     border-width: 1px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-collapse:collapse;
 }
 
-.toolbar a {
-    color: #000000;
+.toolbar table{
+    margin-left: 1%;
+}
+
+.toolbar td {
     border-left: solid;
     border-right: solid;
     border-width: 1px;
+}
+
+.toolbar a{
+    color: #000000;
     padding: 5px;
     text-decoration: underline;
     background: #d5d5d5
@@ -109,3 +124,24 @@ textarea {
 .toolbar a:hover {
         background-color: #c7d1d6;
     }
+
+.riderimg{
+    width: 100%;
+}
+
+.imgHome{
+    width: 40%;
+    position: absolute;
+    right: 2%;
+    top: 72%;
+}
+
+.imgGear{
+    margin-left: 15%;
+    width: 65%;
+}
+
+.content{
+    overflow-y:scroll;
+    height:85%;
+}

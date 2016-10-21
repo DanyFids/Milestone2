@@ -4,12 +4,11 @@
     ViewBag.Title = "Models";
 
 }
-<h1>Adventure Bikes</h1>
 <h2>Touring Bike Models</h2>
-
-@foreach (var item in Model)
-{
-    <h2>@Html.ActionLink(item.ProductModel, "Details", new { id = item.ProductModelID })</h2>
-    <p>@item.Description</p>
-}
-
+<div class="content">
+    @foreach (var item in Model)
+    {
+        <h2>@Html.ActionLink(item.ProductModel, "Details", new { id = item.ProductModelID })</h2>
+        <p>@item.Description</p>
+    }
+</div>

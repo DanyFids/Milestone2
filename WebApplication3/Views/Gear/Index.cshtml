@@ -11,7 +11,9 @@
 
 <h1>Adventure Bikes</h1>
 
-<h2>Browse our bike Categories</h2>
+<img src="~/img/Gear.jpg" class="imgGear"/>
+
+<h2>Browse our Gear</h2>
 
 @foreach (var item in Model) {
     @Html.ActionLink(@item.Name, CATEGORIES[item.ProductCategoryID]);   
