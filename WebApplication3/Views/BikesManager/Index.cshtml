@@ -9,6 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+<div class="content">
 <table class="table">
     <tr>
         <th>
@@ -62,7 +63,8 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Name)
@@ -92,16 +94,45 @@
             @Html.DisplayFor(modelItem => item.SellStartDate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.SellEndDate)
+            @{
+                var SEDdisplay = "N/A";
+                if (item.DiscontinuedDate != null)
+                {
+                    SEDdisplay = item.SellEndDate.ToString();
+                }
+            }
+            @Html.DisplayFor(modelItem => SEDdisplay)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DiscontinuedDate)
+            @{ 
+                var DDdisplay = "N/A";
+                if(item.DiscontinuedDate != null)
+                {
+                    DDdisplay = item.DiscontinuedDate.ToString();
+                }
+            }
+            @Html.DisplayFor(modelItem => DDdisplay)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ThumbNailPhoto)
+            @{
+                if (item.ThumbNailPhoto != null)
+                {
+                    @Html.Raw("<img src='" + string.Format("data:image/jpeg;base64,{0}", Convert.ToBase64String(item.ThumbNailPhoto)) + "'/>")
+                }else
+                {
+                    @Html.Raw("N/A")
+                }
+                }
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ThumbnailPhotoFileName)
+            @{
+                var TNdisplay = "N/A";
+                if (item.DiscontinuedDate != null)
+                {
+                    TNdisplay = item.DiscontinuedDate.ToString();
+                }
+            }
+            @Html.DisplayFor(modelItem => TNdisplay)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.rowguid)
@@ -112,12 +143,8 @@
         <td>
             @Html.DisplayFor(modelItem => item.ProductCategory.Name)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ProductID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ProductID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ProductID })
-        </td>
     </tr>
 }
 
 </table>
+</div>
