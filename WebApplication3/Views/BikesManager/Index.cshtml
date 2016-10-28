@@ -96,7 +96,7 @@
         <td>
             @{
                 var SEDdisplay = "N/A";
-                if (item.DiscontinuedDate != null)
+                if (item.SellEndDate != null)
                 {
                     SEDdisplay = item.SellEndDate.ToString();
                 }
@@ -127,9 +127,9 @@
         <td>
             @{
                 var TNdisplay = "N/A";
-                if (item.DiscontinuedDate != null)
+                if (item.ThumbnailPhotoFileName != null)
                 {
-                    TNdisplay = item.DiscontinuedDate.ToString();
+                    TNdisplay = item.ThumbnailPhotoFileName;
                 }
             }
             @Html.DisplayFor(modelItem => TNdisplay)

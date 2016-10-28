@@ -28,6 +28,7 @@ namespace WebApplication3.Controllers
             ViewBag.MountainModels = (from mod in db.vProductAndDescription2 where mod.ProductCategoryID == 5 select new SelectListItem { Value = mod.ProductModelID.ToString(), Text = mod.ProductModel }).Distinct();
             ViewBag.RoadModels = (from mod in db.vProductAndDescription2 where mod.ProductCategoryID == 6 select new SelectListItem { Value = mod.ProductModelID.ToString(), Text = mod.ProductModel }).Distinct();
             ViewBag.TouringModels = (from mod in db.vProductAndDescription2 where mod.ProductCategoryID == 7 select new SelectListItem { Value = mod.ProductModelID.ToString(), Text = mod.ProductModel }).Distinct();
+            ViewBag.now = DateTime.Now.Date.ToString("yyyy/MM/dd");
             return View();
         }
 
@@ -50,6 +51,7 @@ namespace WebApplication3.Controllers
             ViewBag.MountainModels = (from mod in db.vProductAndDescription2 where mod.ProductCategoryID == 5 select new SelectListItem { Value = mod.ProductModelID.ToString(), Text = mod.ProductModel }).Distinct();
             ViewBag.RoadModels = (from mod in db.vProductAndDescription2 where mod.ProductCategoryID == 6 select new SelectListItem { Value = mod.ProductModelID.ToString(), Text = mod.ProductModel }).Distinct();
             ViewBag.TouringModels = (from mod in db.vProductAndDescription2 where mod.ProductCategoryID == 7 select new SelectListItem { Value = mod.ProductModelID.ToString(), Text = mod.ProductModel }).Distinct();
+            ViewBag.now = DateTime.Now.Date.ToString("yyyy/MM/dd");
             return View(product);
         }
 
@@ -119,6 +121,55 @@ namespace WebApplication3.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public JsonResult CheckListPrice(decimal ListPrice, decimal StandardCost)
+        {
+            bool result;
+            if (StandardCost != null)
+            {
+                if (ListPrice > StandardCost)
+                {
+                    result = true;
+                }
+                else
+                {
+                    result = false;
+                }
+            }else
+            {
+                result = false;
+            }
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult DuplicateName(string name)
+        {
+            bool result;
+
+            if(! db.Products.Any(x => x.Name == name))
+            {
+                result = true;
+            }else
+            {
+                result = false;
+            }
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult DuplicateNum(string productNumber)
+        {
+            bool result;
+
+            if (!db.Products.Any(x => x.ProductNumber == productNumber))
+            {
+                result = true;
+            }
+            else
+            {
+                result = false;
+            }
+            return Json(result, JsonRequestBehavior.AllowGet);
         }
     }
 }

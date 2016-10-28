@@ -12,14 +12,17 @@ namespace WebApplication3
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
 
     public partial class Product
     {
         [Required(ErrorMessage = "* Required")]
         public int ProductID { get; set; }
         [Required(ErrorMessage ="* Required")]
+        [Remote("DuplicateName", "BikesManager", ErrorMessage = "* Name must be Unique")]
         public string Name { get; set; }
         [Required(ErrorMessage = "* Required")]
+        [Remote("DuplicateNum", "BikesManager", ErrorMessage = "* Product Number must be Unique")]
         public string ProductNumber { get; set; }
         [Required(ErrorMessage = "* Required")]
         public string Color { get; set; }
@@ -28,6 +31,7 @@ namespace WebApplication3
         public decimal StandardCost { get; set; }
         [Required(ErrorMessage = "* Required")]
         [Range(typeof(decimal), minimum: "0.0", maximum: "79228162514264337593543950335", ErrorMessage = "* Value must be positive")]
+        [Remote("CheckListPrice", "BikesManager", AdditionalFields = "StandardCost", ErrorMessage = "* ListPrice must be bigger than Standard Cost")]
         public decimal ListPrice { get; set; }
         [Required(ErrorMessage = "* Required")]
         public string Size { get; set; }
