@@ -8,17 +8,19 @@ namespace WebApplication3.Models
 {
     public class Contact
     {
-        [Required(ErrorMessage = "* Required")]
+        [Display (Name ="First Name")]
+        [Required(ErrorMessage = "* First Name is Required")]
         public String FirstName { get; set; }
-        [Required(ErrorMessage = "* Required")]
+        [Display (Name = "Last Name")]
+        [Required(ErrorMessage = "* Last Name is Required")]
         public String LastName { get; set; }
-        [Required (ErrorMessage = "* Required")]
+        [Required (ErrorMessage = "* Email is Required")]
         //[EmailAddress]
         /*[EmailAT]
         [EmailCOM]*/
         [RegularExpression("^[a-zA-Z0-9]+@[a-zA-Z0-9]+[.](com|ca|org|mail|edu|net|biz)$", ErrorMessage = "* Invalid Email: Email should have a '@' and end in '.com'")]
         public String Email { get; set; }
-        [Required(ErrorMessage = "* Required")]
+        [Required(ErrorMessage = "* Message is Required")]
         public String Message { get; set; }
     }
 

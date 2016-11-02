@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Contact";
 }
+
 <h2>@ViewBag.Title.</h2>
 
 @using (Html.BeginForm())
@@ -37,11 +38,11 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Message, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.TextAreaFor(m => m.Message, new { @class = "form-control" })
+            @Html.TextAreaFor(m => m.Message, new { @class = "form-control" , @required = "true" })
             @Html.ValidationMessageFor(m => m.Message)
         </div>
     </div>
-    var captcha = Html.Captcha("Refresh", "Input", 5, "* Required", false);
+    var captcha = Html.Captcha("Refresh", "Input", 5, "* Captcha is Required", false);
     @captcha
     @Html.ValidationMessage(captcha.BuildInfo.InputElementId);
     <br />
