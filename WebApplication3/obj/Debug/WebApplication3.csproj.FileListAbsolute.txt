@@ -112,3 +112,6 @@ F:\Milestone2\WebApplication3\bin\Newtonsoft.Json.xml
 F:\Milestone2\WebApplication3\obj\Debug\WebApplication3.csprojResolveAssemblyReference.cache
 F:\Milestone2\WebApplication3\obj\Debug\WebApplication3.dll
 F:\Milestone2\WebApplication3\obj\Debug\WebApplication3.pdb
+F:\Milestone2\WebApplication3\bin\CaptchaMvc.dll
+F:\Milestone2\WebApplication3\bin\CaptchaMvc.pdb
+F:\Milestone2\WebApplication3\bin\CaptchaMvc.xml
